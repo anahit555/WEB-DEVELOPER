@@ -1,12 +1,12 @@
-.contact-form{
+.contact-form {
     width: 100%;
     margin-top: 20px;
 
-    ul{
+    ul {
         padding: 0;
         margin: 0;
 
-        li{
+        li {
             padding: 0;
             margin: 0;
             list-style: none;
@@ -17,24 +17,24 @@
             opacity: 0;
             animation: fadeInUp 2s 2s;
             animation-fill-mode: forwards;
-            clear:both;
+            clear: both;
         }
     }
 
-    li.half{
+    li.half {
         width: 49%;
         margin-left: 2%;
         float: left;
         clear: none;
 
-        &:first-child{
+        &:first-child {
             margin-left: 0;
         }
     }
 }
 
 input[type="text"],
-input[type="email"]{
+input[type="email"] {
     width: 100%;
     border: 0;
     background: #115173;
@@ -45,7 +45,7 @@ input[type="email"]{
     box-sizing: border-box;
 }
 
-textarea{
+textarea {
     width: 100%;
     border: 0;
     background: #115173;
@@ -56,7 +56,8 @@ textarea{
     min-height: 150px;
     box-sizing: border-box;
 }
-.flat-button{
+
+.flat-button {
     color: #ffd700;
     background: 0 0;
     font: 11px;
@@ -67,7 +68,8 @@ textarea{
     justify-self: center;
     border-radius: 5px;
 }
-.info-map{
+
+.info-map {
     position: absolute;
     background-color: #000;
     top: 50px;
@@ -88,16 +90,19 @@ textarea{
         padding-top: 20px;
         color: #ffd700;
     }
-    
+
 }
-.map-wrap{
+
+.map-wrap {
     float: right;
     height: 100%;
     width: 53%;
     background-color: rgba(8, 253, 216, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
-.leaflet-container{
+.leaflet-container {
     width: 100%;
     height: 100%;
     position: relative;

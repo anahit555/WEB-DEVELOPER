@@ -1,69 +1,73 @@
 import AnimatedLetters from '../AnimatedLetters';
-import { useEffect, useState } from 'react';
-import './index.scss';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 
-const Contact = ()=>{
-    const [letterClass, setLetterClass] = useState('text-animate')
+import { useLetterAnimationClass } from '../../hooks/useLetterAnimationClass';
 
-    useEffect(()=>{
-        return setTimeout(()=>{
-            setLetterClass(`text-animate-hover`)
-        }, 3000)
-    },[])
+import './index.scss';
 
-    return(
-        <div className='contanier contact-page'>
+const myARR = ['C', 'O', 'N', 'T', 'A', 'C', 'T'];
+
+const Contact = () => {
+    const letterClass = useLetterAnimationClass();
+
+    return (
+        <div className='container contact-page'>
             <div className='text-zone'>
                 <h1>
-                    <AnimatedLetters 
+                    <AnimatedLetters
                         letterClass={letterClass}
-                        strArray={['C', 'O', 'N', 'T', 'A', 'C','T']}
-                        idx= {15}/>
+                        strArray={myARR}
+                        idx={15}
+                    />
                 </h1>
                 <p>
-                    A front-end developer architects and develops websites and 
-                    applications using web technologies (i.e., HTML, CSS, DOM, 
-                    and JavaScript), which run on the Open Web Platform or act 
-                    as compilation input for non-web platform environments 
+                    A front-end developer architects and develops websites and
+                    applications using web technologies (i.e., HTML, CSS, DOM,
+                    and JavaScript), which run on the Open Web Platform or act
+                    as compilation input for non-web platform environments
                     (i.e., React Native).
                 </p>
                 <div className='contact-form'>
                     <form>
                         <ul>
                             <li className='half'>
-                                <input 
+                                <input
                                     type="text"
                                     name="name"
                                     placeholder="Name"
-                                    required />
+                                    required
+                                />
                             </li>
                             <li className='half'>
-                                <input 
+                                <input
                                     type="email"
                                     name="email"
                                     placeholder="Email"
-                                    required />
+                                    required
+                                />
                             </li>
-                            <li> 
-                                <input 
+                            <li>
+                                <input
                                     type="text"
                                     name="Subject"
                                     placeholder="Subject"
-                                    required />
+                                    required
+                                />
                             </li>
                             <li>
                                 <textarea
                                     name="message"
                                     placeholder="Message"
-                                    required>
+                                    required
+                                >
                                 </textarea>
                             </li>
                             <li>
-                                <input 
+                                <input
                                     type="submit"
                                     className="flat-button"
-                                    value="SEND" />
+                                    value="SEND"
+                                />
                             </li>
                         </ul>
                     </form>
@@ -71,18 +75,18 @@ const Contact = ()=>{
             </div>
             <div className='info-map'>
                 Slobodan Gajic,
-                <br/>
+                <br />
                 Poland,
-                <br/>
+                <br />
                 <span>
-                 anahit.asatryan.95@mail.ru
+                    anahit.asatryan.95@mail.ru
                 </span>
             </div>
             <div className='map-wrap'>
                 <MapContainer center={[44.96366, 19.61045]} zoom={13}>
-                    <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
+                    <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                     <Marker position={[44.96366, 19.61045]}>
-                        <Popup>Slobo live here</Popup> 
+                        <Popup>Slobo live here</Popup>
                     </Marker>
                 </MapContainer>
             </div>
